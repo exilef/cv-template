@@ -1,0 +1,336 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Resume/CV template
+% Version 1.0 (2019/01/27)
+%
+% - Changed to Merriweather font, spacing modifications
+% - New education command
+% - Compile with pdflatex
+%
+% Original author:
+% Howard Wilson (https://github.com/watsonbox/cv_template_2004) with
+% extensive modifications by Vel (vel@latextemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[10pt]{article} % Default font size
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+% geometry
+\usepackage[a4paper, hmargin=25mm, vmargin=30mm, top=20mm]{geometry}
+
+% font
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[light]{merriweather}
+
+\usepackage{setspace}
+\setstretch{1.1}
+
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{hyperref}
+
+% suppress section numbering
+\setcounter{secnumdepth}{0} 
+
+% header color
+\usepackage{color}
+\definecolor{headercolor}{rgb}{0,0,0}
+
+% custom headers
+\usepackage{sectsty}
+\sectionfont{\color{headercolor}}
+
+% headers and footers
+\fancypagestyle{plain}{\fancyhf{}\cfoot{\thepage\ of \pageref{LastPage}}}
+\pagestyle{plain}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% no parindent
+\setlength\parindent{0pt}
+
+% non-indenting itemize
+\newenvironment{itemize-noindent}
+{\setlength{\leftmargini}{0em}\begin{itemize}}
+{\end{itemize}}
+
+% text width for tabbing environments
+\newlength{\smallertextwidth}
+\setlength{\smallertextwidth}{\textwidth}
+\addtolength{\smallertextwidth}{-2cm}
+
+% square bullet
+\newcommand{\sqbullet}{~\vrule height 1ex width .8ex depth -.2ex} % Custom square bullet point definition
+
+%----------------------------------------------------------------------------------------
+%	MAIN HEADER COMMAND
+%----------------------------------------------------------------------------------------
+
+\renewcommand{\title}[1]{
+{\huge{\color{headercolor}\textbf{#1}}}\\
+\rule{\textwidth}{0.5mm}\\
+}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION COMMAND
+%----------------------------------------------------------------------------------------
+
+\newcommand{\education}[5]{
+\begin{tabbing}
+\hspace{2cm} \= \kill
+{#1} \> \textbf{#2}\\
+\>\+ \textit{\href{#4}{#3}}\\[3pt]
+\begin{minipage}{\smallertextwidth}
+\vspace{2mm}
+#5
+\end{minipage}
+\end{tabbing}
+\vspace{2mm}
+}
+
+%----------------------------------------------------------------------------------------
+%	JOB COMMAND
+%----------------------------------------------------------------------------------------
+
+\newcommand{\job}[6]{
+\begin{tabbing}
+\hspace{2cm} \= \kill
+{#1} \> \textbf{#3}\\
+{#2} \>\+ \textit{\href{#5}{#4}}\\[3pt]
+\begin{minipage}{\smallertextwidth}
+\vspace{2mm}
+#6
+\end{minipage}
+\end{tabbing}
+\vspace{2mm}
+}
+
+%----------------------------------------------------------------------------------------
+%	SKILL GROUP COMMAND
+%----------------------------------------------------------------------------------------
+
+\newcommand{\skillgroup}[2]{
+\begin{tabbing}
+\hspace{5mm} \= \kill
+\sqbullet \>\+ \textbf{#1}\\
+\begin{minipage}{\smallertextwidth}
+\vspace{2mm}
+#2
+\end{minipage}
+\end{tabbing}
+}
+
+%----------------------------------------------------------------------------------------
+%	INTERESTS GROUP COMMAND
+%-----------------------------------------------------------------------------------------
+
+\newcommand{\interestsgroup}[1]{
+\begin{tabbing}
+\hspace{5mm} \= \kill
+#1
+\end{tabbing}
+\vspace{-10mm}
+}
+
+\newcommand{\interest}[1]{\sqbullet \> \textbf{#1}\\[3pt]}
+
+%----------------------------------------------------------------------------------------
+%	TABBED BLOCK COMMAND
+%----------------------------------------------------------------------------------------
+
+\newcommand{\tabbedblock}[1]{
+\begin{tabbing}
+\hspace{2cm} \= \hspace{4cm} \= \kill
+#1
+\end{tabbing}
+}
+
+%----------------------------------------------------------------------------------------
+%	REFERENCE COMMAND
+%----------------------------------------------------------------------------------------
+\newcommand{\reference}[4]{
+\begin{tabbing}
+\hspace{2cm} \= \hspace{4cm} \= \kill
+\textbf{Name} \> #1\\
+\textbf{Company} \> #2\\
+\textbf{Position} \> #3\\
+\textbf{Contact} \> \href{mailto:{#4}}{#4}
+\end{tabbing}
+}
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	NAME AND CONTACT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\title{John Smith -- Résumé} % Print the main header
+
+%------------------------------------------------
+
+\parbox{0.5\textwidth}{
+\begin{tabbing}
+\hspace{3cm} \= \hspace{4cm} \= \kill
+{\bf Address} \> 123 Broadway,\\
+\> City, 12345 \\[3pt]
+{\bf Date of Birth} \> 7$^{th}$ September 1979 \\[5pt]
+{\bf Nationality} \> British
+\end{tabbing}}
+%
+\hfill
+%
+\parbox{0.5\textwidth}{
+\begin{tabbing}
+\hspace{3cm} \= \hspace{4cm} \= \kill
+{\bf Home Phone} \> +0 (000) 111 1111 \\[5pt]
+{\bf Mobile Phone} \> +0 (000) 111 1112 \\[5pt]
+{\bf Email} \> \href{mailto:john@smith.com}{john@smith.com}\\
+\end{tabbing}}
+
+%----------------------------------------------------------------------------------------
+%	PERSONAL PROFILE
+%----------------------------------------------------------------------------------------
+
+\section{Personal Profile}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elementum nec dolor sed sagittis. Cras justo lorem, volutpat mattis lacus vel, consequat aliquam quam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer blandit, massa at tincidunt ornare, dolor magna interdum felis, ac blandit urna neque in turpis.
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Education}
+
+\education
+{2004-2007}
+{BSc Hons in Computer Science}
+{University of Warwick, England}
+{http://www.warwick.ac.uk}
+{First Class - 80\% Average\\[5pt]
+\textit{Third Year Project - 89\% awarded `Project of the Year 2004'}}
+
+\education
+{2001-2003}
+{Advanced Secondary Education}
+{University of Warwick, England}
+{http://www.warwick.ac.uk}
+{}
+
+%----------------------------------------------------------------------------------------
+%	EMPLOYMENT HISTORY SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Experience}
+
+\job
+{Sep 2011 -}{Present}
+{Senior Developer / Technical Team Lead}
+{Lehman Brothers, 1234 Mario Park, San Francisco, CA, United States}
+{http://www.lehmanbrothers.com}
+{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elementum nec dolor sed sagittis. Cras justo lorem, volutpat mattis lacus vel, consequat aliquam quam. Interdum et malesuada fames ac ante ipsum primis in faucibus.\\
+\rule{0mm}{5mm}\textbf{Technologies:} Ruby on Rails 2.3, Amazon EC2, NoSQL data stores, memcached, collaborative matching, Facebook Graph API.}
+
+%------------------------------------------------
+
+\job
+{Oct 2009 -}{Sep 2010}
+{Analyst}
+{Initech Inc., Otis St, CA 94025, United States}
+{http://www.initech.com}
+{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elementum nec dolor:
+
+\begin{itemize-noindent}
+\item{Developed spreadsheets for risk analysis on exotic derivatives on a wide array of commodities (ags, oils, precious and base metals.)}
+\item{Managed blotter and secondary trades on structured notes, liaised with Middle Office, Sales and Structuring for bookkeeping.}
+\end{itemize-noindent}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elementum nec dolor sed sagittis.}
+
+%----------------------------------------------------------------------------------------
+%	IT/COMPUTING SKILLS SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Software Engineering Skills}
+
+\skillgroup{Programming Languages}
+{
+\textit{Ruby} - MRI 1.8.7, 1.9.2\\
+\textit{ASP.NET, C\#, VB.NET}\\
+\textit{PHP}\\
+\textit{Java/Scala}
+}
+
+%------------------------------------------------
+
+\skillgroup{Web Development}
+{
+\textit{HTML5, CSS3/SASS, JavaScript/CoffeeScript/jQuery}\\
+\textit{Ruby on Rails v3.1}\\
+\textit{Test:Unit, RSpec, Cucumber, Selenium} - automated testing frameworks\\
+\textit{Apache/Nginx Web Servers}\\
+}
+
+%------------------------------------------------
+
+\skillgroup{Miscellaneous}
+{
+\textit{Microsoft SQL Server 2000/2005} - database architecture and administration\\
+\textit{Transact-SQL} - data definition and manipulation\\
+\textit{SQL Profiler} - performance tuning and debugging\\
+\textit{MySQL Server}\\
+\textit{CVS, DARCS, git} - source version control
+}
+
+%----------------------------------------------------------------------------------------
+%	INTERESTS SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Interests}
+
+\interestsgroup{
+\interest{Badminton, Tennis, Running, Cycling, Sailing}
+\interest{Travelling}
+\interest{Creative Writing}
+\interest{Photography}
+\interest{Car Mechanics}
+}
+
+%----------------------------------------------------------------------------------------
+%	REFERENCES SECTION
+%----------------------------------------------------------------------------------------
+
+\section{References}
+
+\parbox{0.5\textwidth}{
+\reference
+{Bill Lumbergh}
+{Initech Inc.}
+{Vice President}
+{bill@initech.com}
+}
+%
+\hfill
+%
+\parbox{0.5\textwidth}{
+\reference
+{Michael "Big Mike" Tucker}
+{Burbank Buy More}
+{Store Manager}
+{mike@buymore.com}
+}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
