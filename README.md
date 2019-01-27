@@ -12,3 +12,11 @@ Changes
 * Changed to Merriweather font, spacing modifications
 * New education and reference commands
 * Compile with pdflatex
+
+
+Example
+-------
+
+![Page 1](https://github.com/exilef/cv-template/blob/master/example/page1.png) ![Page 2](https://github.com/exilef/cv-template/blob/master/example/page2.png)
+
+[PDF Version](https://github.com/exilef/cv-template/blob/master/example/cv.pdf)
