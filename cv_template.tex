@@ -159,6 +159,7 @@
 %	REFERENCE COMMAND
 %----------------------------------------------------------------------------------------
 \newcommand{\reference}[4]{
+\parbox[t]{0.5\textwidth}{
 \begin{tabbing}
 \hspace{2cm} \= \hspace{4cm} \= \kill
 \textbf{Name} \> #1\\
@@ -166,7 +167,7 @@
 \textbf{Position} \> #3\\
 \textbf{Contact} \> \href{mailto:{#4}}{#4}
 \end{tabbing}
-}
+}}
 
 %----------------------------------------------------------------------------------------
 
@@ -180,7 +181,7 @@
 
 %------------------------------------------------
 
-\parbox{0.5\textwidth}{
+\parbox[t]{0.5\textwidth}{
 \begin{tabbing}
 \hspace{3cm} \= \hspace{4cm} \= \kill
 {\bf Address} \> 123 Broadway,\\
@@ -191,7 +192,7 @@
 %
 \hfill
 %
-\parbox{0.5\textwidth}{
+\parbox[t]{0.5\textwidth}{
 \begin{tabbing}
 \hspace{3cm} \= \hspace{4cm} \= \kill
 {\bf Home Phone} \> +0 (000) 111 1111 \\[5pt]
