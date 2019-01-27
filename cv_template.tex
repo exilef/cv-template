@@ -64,13 +64,18 @@
 {\setlength{\leftmargini}{0em}\begin{itemize}}
 {\end{itemize}}
 
+% left margin
+\newlength{\marginwidth}
+\setlength{\marginwidth}{2.2cm}
+
 % text width for tabbing environments
 \newlength{\smallertextwidth}
 \setlength{\smallertextwidth}{\textwidth}
-\addtolength{\smallertextwidth}{-2cm}
+\addtolength{\smallertextwidth}{-\marginwidth}
 
 % square bullet
 \newcommand{\sqbullet}{~\vrule height 1ex width .8ex depth -.2ex} % Custom square bullet point definition
+\newcommand{\link}[1]{\texttt{\href{#1}{#1}}}
 
 %----------------------------------------------------------------------------------------
 %	MAIN HEADER COMMAND
@@ -87,9 +92,9 @@
 
 \newcommand{\education}[4]{
 \begin{tabbing}
-\hspace{2cm} \= \kill
+\hspace{\marginwidth} \= \kill
 {#1} \> \textbf{#2}\\
-\>\+ \textit{#3}\\[3pt]
+\>\+ \textit{#3}\\[5pt]
 \begin{minipage}{\smallertextwidth}
 \vspace{2mm}
 #4
@@ -104,9 +109,9 @@
 
 \newcommand{\job}[5]{
 \begin{tabbing}
-\hspace{2cm} \= \kill
+\hspace{\marginwidth} \= \kill
 {#1} \> \textbf{#3}\\
-{#2} \>\+ \textit{#4}\\[3pt]
+{#2} \>\+ \textit{#4}\\[5pt]
 \begin{minipage}{\smallertextwidth}
 \vspace{2mm}
 #5
@@ -142,7 +147,7 @@
 \vspace{-10mm}
 }
 
-\newcommand{\interest}[1]{\sqbullet \> \textbf{#1}\\[3pt]}
+\newcommand{\interest}[1]{\sqbullet \> \textbf{#1}\\[5pt]}
 
 %----------------------------------------------------------------------------------------
 %	TABBED BLOCK COMMAND
@@ -150,9 +155,29 @@
 
 \newcommand{\tabbedblock}[1]{
 \begin{tabbing}
-\hspace{2cm} \= \hspace{4cm} \= \kill
+\hspace{\marginwidth} \= \hspace{\smallertextwidth} \= \kill
 #1
 \end{tabbing}
+}
+
+%----------------------------------------------------------------------------------------
+%	TAB ITEM
+%----------------------------------------------------------------------------------------
+\newcommand{\tabitem}[2]{%
+#1\>\begin{minipage}[t]{\smallertextwidth}#2\end{minipage}\\[5pt]
+}
+
+%----------------------------------------------------------------------------------------
+%	PUBLICATION COMMAND
+%----------------------------------------------------------------------------------------
+\newcommand{\publication}[5]{
+\tabitem
+{#1}
+{%
+  \href{#5}{#2}\\
+  #3\\
+  #4\\
+}
 }
 
 %----------------------------------------------------------------------------------------
@@ -161,7 +186,7 @@
 \newcommand{\reference}[4]{
 \parbox[t]{0.5\textwidth}{
 \begin{tabbing}
-\hspace{2cm} \= \hspace{4cm} \= \kill
+\hspace{\marginwidth} \= \hspace{4cm} \= \kill
 \textbf{Name} \> #1\\
 \textbf{Company} \> #2\\
 \textbf{Position} \> #3\\
@@ -185,7 +210,7 @@
 \begin{tabbing}
 \hspace{3cm} \= \hspace{4cm} \= \kill
 \textbf{Address} \> 123 Broadway,\\
-\> City, 12345 \\[3pt]
+\> City, 12345 \\[5pt]
 \textbf{Date of Birth} \> 7$^{th}$ September 1979 \\[5pt]
 \textbf{Nationality} \> British
 \end{tabbing}}
@@ -255,6 +280,21 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elementum nec dolo
 \end{itemize-noindent}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elementum nec dolor sed sagittis.}
+
+%----------------------------------------------------------------------------------------
+%	Publications SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Publications}
+
+\tabbedblock{
+  \publication
+  {2011}
+  {My first paper}
+  {Me and other authors}
+  {Journal of Computing}
+  {http://journal-of-computing.org/my_paper}
+}
 
 %----------------------------------------------------------------------------------------
 %	IT/COMPUTING SKILLS SECTION
