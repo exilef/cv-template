@@ -85,14 +85,14 @@
 %	EDUCATION COMMAND
 %----------------------------------------------------------------------------------------
 
-\newcommand{\education}[5]{
+\newcommand{\education}[4]{
 \begin{tabbing}
 \hspace{2cm} \= \kill
 {#1} \> \textbf{#2}\\
-\>\+ \textit{\href{#4}{#3}}\\[3pt]
+\>\+ \textit{#3}\\[3pt]
 \begin{minipage}{\smallertextwidth}
 \vspace{2mm}
-#5
+#4
 \end{minipage}
 \end{tabbing}
 \vspace{2mm}
@@ -102,14 +102,14 @@
 %	JOB COMMAND
 %----------------------------------------------------------------------------------------
 
-\newcommand{\job}[6]{
+\newcommand{\job}[5]{
 \begin{tabbing}
 \hspace{2cm} \= \kill
 {#1} \> \textbf{#3}\\
-{#2} \>\+ \textit{\href{#5}{#4}}\\[3pt]
+{#2} \>\+ \textit{#4}\\[3pt]
 \begin{minipage}{\smallertextwidth}
 \vspace{2mm}
-#6
+#5
 \end{minipage}
 \end{tabbing}
 \vspace{2mm}
@@ -198,6 +198,7 @@
 \textbf{Home Phone} \> +0 (000) 111 1111 \\[5pt]
 \textbf{Mobile Phone} \> +0 (000) 111 1112 \\[5pt]
 \textbf{Email} \> \href{mailto:john@smith.com}{john@smith.com}\\
+\textbf{Website} \> \href{https://smith.com}{https://smith.com}\\
 \end{tabbing}}
 
 %----------------------------------------------------------------------------------------
@@ -217,16 +218,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elementum nec dolo
 \education
 {2004-2007}
 {BSc Hons in Computer Science}
-{University of Warwick, England}
-{http://www.warwick.ac.uk}
+{\href{http://www.warwick.ac.uk}{University of Warwick, England}}
 {First Class - 80\% Average\\[5pt]
 \textit{Third Year Project - 89\% awarded `Project of the Year 2004'}}
 
 \education
 {2001-2003}
 {Advanced Secondary Education}
-{University of Warwick, England}
-{http://www.warwick.ac.uk}
+{\href{http://www.warwick.ac.uk}{University of Warwick, England}}
 {}
 
 %----------------------------------------------------------------------------------------
@@ -238,8 +237,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elementum nec dolo
 \job
 {Sep 2011 -}{Present}
 {Senior Developer / Technical Team Lead}
-{Lehman Brothers, 1234 Mario Park, San Francisco, CA, United States}
-{http://www.lehmanbrothers.com}
+{\href{http://www.lehmanbrothers.com}{Lehman Brothers, 1234 Mario Park, San Francisco, CA, United States}}
 {Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elementum nec dolor sed sagittis. Cras justo lorem, volutpat mattis lacus vel, consequat aliquam quam. Interdum et malesuada fames ac ante ipsum primis in faucibus.\\
 \rule{0mm}{5mm}\textbf{Technologies:} Ruby on Rails 2.3, Amazon EC2, NoSQL data stores, memcached, collaborative matching, Facebook Graph API.}
 
@@ -248,8 +246,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elementum nec dolo
 \job
 {Oct 2009 -}{Sep 2010}
 {Analyst}
-{Initech Inc., Otis St, CA 94025, United States}
-{http://www.initech.com}
+{\href{http://www.initech.com}{Initech Inc., Otis St, CA 94025, United States}}
 {Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elementum nec dolor:
 
 \begin{itemize-noindent}
